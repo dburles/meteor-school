@@ -1,0 +1,153 @@
+<head>
+  <title>Meteor School</title>
+</head>
+
+<body>
+  {{> alert}}
+  {{> error}}
+
+  {{> main}}
+</body>
+
+<template name="main">
+  <div class="container">
+    <div class="row clearfix">
+      <div class="col-md-12 column">
+        <nav class="navbar navbar-default" role="navigation">
+          <div class="navbar-header">
+             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+               <span class="sr-only">Toggle navigation</span>
+               <span class="icon-bar"></span>
+               <span class="icon-bar"></span>
+               <span class="icon-bar"></span>
+             </button>
+             <a class="navbar-brand" href="/">Meteor School</a>
+          </div>
+          
+          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+              <li>
+                {{#if currentUser}}
+                  <button data-sign-out class="btn btn-default navbar-btn"><i class="fa fa-twitter"></i> Sign out</button>
+                {{else}}
+                  <button data-sign-in class="btn btn-primary navbar-btn"><i class="fa fa-twitter"></i> Sign in with Twitter</button>
+                {{/if}}
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </div>
+
+    <div class="row clearfix">
+      <div class="col-md-12 column">
+        {{#if latestEvent}}
+          {{> event latestEvent}}
+        {{else}}
+          <div class="page-header">
+            <h1>No event scheduled</h1>
+            <small>There's currently no event scheduled</small>
+          </div>
+        {{/if}}
+      </div>
+    </div>
+
+    {{!--
+    <div class="row clearfix">
+      <div class="col-md-12 column">
+        <div class="page-header">
+          <h3>
+            Members
+          </h3>
+        </div>
+        <div class="row clearfix">
+          {{> usersList users=members}}
+        </div>
+      </div>
+    </div>
+    --}}
+
+    {{#if currentUser.admin}}
+      {{> schedule}}
+    {{/if}}
+  </div>
+</template>
+
+<template name="event">
+  <div class="page-header">
+    <h1>
+      Next <small>{{formattedDate}}</small>
+
+      <div class="pull-right">
+        {{#if currentUser}}
+          <small>Your RSVP</small>
+          <button data-yes class="btn btn-success">Yes</button>
+          <button data-no class="btn btn-danger">No</button>
+        {{else}}
+          <small>Sign in to RSVP</small>
+        {{/if}}
+      </div>
+    </h1>
+  </div>
+  <div class="row clearfix">
+    {{> usersList users=attendees}}
+  </div>
+</template>
+
+<template name="schedule">
+  <div class="row clearfix">
+    <div class="col-md-12 column">
+      <div class="page-header">
+        <h1>
+          Schedule
+        </h1>
+      </div>
+      <div class="row clearfix">
+
+        <div class="col-md-6">
+          <div class="well">
+            <form role="form">
+              <fieldset>
+                <legend>New</legend>
+                <div class="form-group">
+                  <label for="date">Date</label>
+                  <input type="text" class="form-control" name="date">
+                </div>
+                <button type="submit" class="btn btn-default">Create</button>
+              </fieldset>
+            </form>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          {{#each events}}
+            <h4>{{formattedDate}}</h4>
+            {{#each attendees}}
+              {{profile.name}} @{{name}}<br>
+            {{/each}}
+          {{/each}}
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
+
+<template name="usersList">
+  {{#if users.count}}
+    {{#each users}}
+      <div class="col-md-2 column">
+        {{#if avatar}}
+          <img src="{{avatar}}" width="100%">
+        {{else}}
+          <i class="fa fa-user"></i>
+        {{/if}}
+
+        <p>{{profile.name}}<br><a href="http://twitter.com/{{name}}" target="_blank">@{{name}}</a></p>
+      </div>
+    {{/each}}
+  {{else}}
+    <div class="col-md-2 column">
+      <p>No users</p>
+    </div>
+  {{/if}}
+</template>

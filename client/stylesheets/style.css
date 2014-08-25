@@ -1,0 +1,10 @@
+.fa-user {
+  font-size: 12em;
+}
+
+.alert-fixed {
+  width: 100%;
+  z-index: 9999;
+  position: fixed;
+  text-align: center;
+}

@@ -12,18 +12,27 @@ Template.main.helpers({
   },
   allEvents: function() {
     return Events.find({}, { sort: { date: -1 }});
-  },
-  ready: function() {
-    return subs.events.ready();
   }
 });
 
-Template.main.events({
+UI.body.events({
   'click [data-sign-in]': function() {
     Meteor.loginWithTwitter();
   },
   'click [data-sign-out]': function() {
     Meteor.logout();
+  }
+});
+
+Template.event.helpers({
+  ready: function() {
+    return subs.events.ready();
+  }
+});
+
+Template.usersList.helpers({
+  ready: function() {
+    return subs.events.ready();
   }
 });
 

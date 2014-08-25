@@ -43,20 +43,7 @@
 <template name="main">
   <div class="row clearfix">
     <div class="col-md-12 column">
-      {{#if ready}}
-        {{#if latestEvent}}
-          {{> event latestEvent}}
-        {{else}}
-          <div class="page-header">
-            <h1>No event scheduled</h1>
-            <small>There's currently no event scheduled</small>
-          </div>
-        {{/if}}
-      {{else}}
-        <div class="page-header">
-          <h1>Loading...</h1>
-        </div>
-      {{/if}}
+      {{> event event=latestEvent}}
     </div>
   </div>
 
@@ -82,22 +69,34 @@
 
 <template name="event">
   <div class="page-header">
-    <h1>
-      Next <small>{{formattedDate}}</small>
+    {{#if event}}
+      {{#with event}}
+        <h1>
+          Next <small>{{formattedDate}}</small>
 
-      <div class="pull-right">
-        {{#if currentUser}}
-          <small>Your RSVP</small>
-          <button data-yes class="btn btn-success">Yes</button>
-          <button data-no class="btn btn-danger">No</button>
-        {{else}}
-          <small>Sign in to RSVP</small>
-        {{/if}}
-      </div>
-    </h1>
+          <div class="pull-right">
+            {{#if currentUser}}
+              <small>Your RSVP</small>
+              <button data-yes class="btn btn-success">Yes</button>
+              <button data-no class="btn btn-danger">No</button>
+            {{else}}
+              <small>Sign in to RSVP</small>
+            {{/if}}
+          </div>
+        </h1>
+      {{/with}}
+    {{else}}
+      {{#if ready}}
+        <h1>No event scheduled</h1>
+        <small>There's currently no event scheduled</small>
+      {{else}}
+        <h1>Loading...</h1>
+      {{/if}}
+    {{/if}}
   </div>
+
   <div class="row clearfix">
-    {{> usersList users=attendees}}
+    {{> usersList users=event.attendees}}
   </div>
 </template>
 
@@ -153,8 +152,10 @@
       </div>
     {{/each}}
   {{else}}
-    <div class="col-sm-3">
-      <p>No users</p>
-    </div>
+    {{#if ready}}
+      <div class="col-sm-3">
+        <p>No users</p>
+      </div>
+    {{/if}}
   {{/if}}
 </template>

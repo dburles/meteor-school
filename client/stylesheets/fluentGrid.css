@@ -30,13 +30,8 @@ ul.grid { padding-left: 0; }
 	display: flex;
 	padding-left: 15px;
 	padding-bottom: 15px;
-}
-.grid-item > *{
-	/* Fallbacks */
-	display: block;
-	width: 100%;
-	/* Modern Browsers */
-	flex: 1;
+	/* testing dave let me know if anything insane happens. */
+	flex-direction: column;
 }
 
 

@@ -141,16 +141,14 @@
 <template name="usersList">
   {{#if users.count}}
     {{#each users}}
-      <div class="grid-item 12of12 md-3of12">
-        <div>
-          {{#if avatar}}
-            <img src="{{avatar}}" width="100%">
-          {{else}}
-            <i class="fa fa-user"></i>
-          {{/if}}
+      <div class="grid-item 6of12 md-3of12">
+        {{#if avatar}}
+          <img src="{{avatar}}" width="100%">
+        {{else}}
+          <i class="fa fa-user"></i>
+        {{/if}}
 
-          <p>{{profile.name}}<br><a href="http://twitter.com/{{name}}" target="_blank">@{{name}}</a></p>
-        </div>
+        <p>{{profile.name}}<br><a href="http://twitter.com/{{name}}" target="_blank">@{{name}}</a></p>
       </div>
     {{/each}}
   {{else}}

@@ -95,7 +95,7 @@
     {{/if}}
   </div>
 
-  <div class="row clearfix">
+  <div class="grid">
     {{> usersList users=event.attendees}}
   </div>
 </template>
@@ -141,7 +141,7 @@
 <template name="usersList">
   {{#if users.count}}
     {{#each users}}
-      <div class="col-sm-3">
+      <div class="grid-item 3of12">
         {{#if avatar}}
           <img src="{{avatar}}" width="100%">
         {{else}}
@@ -153,7 +153,7 @@
     {{/each}}
   {{else}}
     {{#if ready}}
-      <div class="col-sm-3">
+      <div class="grid-item 3of12">
         <p>No users</p>
       </div>
     {{/if}}

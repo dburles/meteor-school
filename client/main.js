@@ -3,10 +3,6 @@ var subs = {
   users: Meteor.subscribe('users')
 };
 
-var ready = function() {
-  return subs.events.ready() && subs.users.ready();
-};
-
 Template.main.helpers({
   members: function() {
     return Meteor.users.find({}, { sort: { 'profile.name': 1 }});
@@ -18,7 +14,7 @@ Template.main.helpers({
     return Events.find({}, { sort: { date: -1 }});
   },
   ready: function() {
-    return ready();
+    return subs.events.ready();
   }
 });
 

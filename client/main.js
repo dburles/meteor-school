@@ -6,7 +6,7 @@ Template.main.helpers({
     return Meteor.users.find({}, { sort: { 'profile.name': 1 }});
   },
   latestEvent: function() {
-    return Events.findOne({}, { sort: { date: -1 }});
+    return Events.findOne({ date: { $gte: new Date() }}, { sort: { date: -1 }});
   },
   allEvents: function() {
     return Events.find({}, { sort: { date: -1 }});
@@ -18,7 +18,6 @@ Template.main.events({
     Meteor.loginWithTwitter();
   },
   'click [data-sign-out]': function() {
-    console.log('test');
     Meteor.logout();
   }
 });

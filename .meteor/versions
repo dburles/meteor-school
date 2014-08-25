@@ -11,6 +11,7 @@ check@1.0.0
 ctl-helper@1.0.2
 ctl@1.0.0
 dburles:collection-helpers@0.3.1
+dburles:factory@0.3.6
 deps@1.0.1
 ejson@1.0.0
 follower-livedata@1.0.0
@@ -30,6 +31,7 @@ minifiers@1.0.2
 minimongo@1.0.1
 mongo-livedata@1.0.3
 mrt:bootstrap-cyborg@0.0.2
+mrt:fake@0.3.4
 mrt:moment@2.6.0
 natestrauser:font-awesome@4.1.0
 oauth1@1.0.0

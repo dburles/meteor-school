@@ -4,8 +4,8 @@ Meteor.users.helpers({
       this.services.twitter.screenName;
   },
   avatar: function() {
-    return this.services &&
-      this.services.twitter.profile_image_url.replace(/_normal/, '');
+    if (this.services && this.services.twitter.profile_image_url)
+      return this.services.twitter.profile_image_url.replace(/_normal/, '');
   },
   admin: function() {
     return this.services &&

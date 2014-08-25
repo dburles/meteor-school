@@ -1,5 +1,11 @@
-Meteor.subscribe('events');
-Meteor.subscribe('users');
+var subs = {
+  events: Meteor.subscribe('events'),
+  users: Meteor.subscribe('users')
+};
+
+var ready = function() {
+  return subs.events.ready() && subs.users.ready();
+};
 
 Template.main.helpers({
   members: function() {
@@ -10,6 +16,9 @@ Template.main.helpers({
   },
   allEvents: function() {
     return Events.find({}, { sort: { date: -1 }});
+  },
+  ready: function() {
+    return ready();
   }
 });
 

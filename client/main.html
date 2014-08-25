@@ -6,10 +6,6 @@
   {{> alert}}
   {{> error}}
 
-  {{> main}}
-</body>
-
-<template name="main">
   <div class="container">
     <div class="row clearfix">
       <div class="col-md-12 column">
@@ -39,8 +35,15 @@
       </div>
     </div>
 
-    <div class="row clearfix">
-      <div class="col-md-12 column">
+    {{> main}}
+
+  </div>
+</body>
+
+<template name="main">
+  <div class="row clearfix">
+    <div class="col-md-12 column">
+      {{#if ready}}
         {{#if latestEvent}}
           {{> event latestEvent}}
         {{else}}
@@ -49,28 +52,32 @@
             <small>There's currently no event scheduled</small>
           </div>
         {{/if}}
-      </div>
-    </div>
-
-    {{!--
-    <div class="row clearfix">
-      <div class="col-md-12 column">
+      {{else}}
         <div class="page-header">
-          <h3>
-            Members
-          </h3>
+          <h1>Loading...</h1>
         </div>
-        <div class="row clearfix">
-          {{> usersList users=members}}
-        </div>
+      {{/if}}
+    </div>
+  </div>
+
+  {{!--
+  <div class="row clearfix">
+    <div class="col-md-12 column">
+      <div class="page-header">
+        <h3>
+          Members
+        </h3>
+      </div>
+      <div class="row clearfix">
+        {{> usersList users=members}}
       </div>
     </div>
-    --}}
-
-    {{#if currentUser.admin}}
-      {{> schedule}}
-    {{/if}}
   </div>
+  --}}
+
+  {{#if currentUser.admin}}
+    {{> schedule}}
+  {{/if}}
 </template>
 
 <template name="event">
@@ -135,7 +142,7 @@
 <template name="usersList">
   {{#if users.count}}
     {{#each users}}
-      <div class="col-sm-2">
+      <div class="col-sm-3">
         {{#if avatar}}
           <img src="{{avatar}}" width="100%">
         {{else}}
@@ -146,7 +153,7 @@
       </div>
     {{/each}}
   {{else}}
-    <div class="col-sm-2">
+    <div class="col-sm-3">
       <p>No users</p>
     </div>
   {{/if}}

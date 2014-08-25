@@ -1,0 +1,94 @@
+$font-family: "Droid Sans", "Helvetica Neue", Helvetica, Arial, sans-serif!default;
+$grid-margin: 15px!default;
+
+/* This resets the font back to your body font family.
+	 Set your content font stack here: */
+html, button, input, select, textarea, .grid-item {
+	font-family: $font-family
+}
+
+/* Optional depending on reset used. */
+* { box-sizing: border-box; }
+ul.grid { padding-left: 0; }
+
+/* The Grid */
+.grid {
+	/* Fallbacks */
+	font-family: FreeSans, Arimo, "Droid Sans", Helvetica, Arial, sans-serif;
+	letter-spacing: -.31em;
+	/* Modern Browsers */
+	list-style-type: none;
+	display: flex;
+	flex-wrap: wrap;
+	margin-left: -$grid-margin;
+	&-item {
+		/* Fallbacks */
+		letter-spacing: normal;
+		vertical-align: top;
+		display: inline-block;
+		/* Modern Browsers */
+		display: flex;
+		padding-left: $grid-margin;
+		padding-bottom: $grid-margin;
+	}
+}
+
+/* Size Class's */
+.\31 of5 { width: 20% }
+.\32 of5 { width: 40% }
+.\33 of5 { width: 60% }
+.\34 of5 { width: 80% }
+.\35 of5 { width: 100% }
+.\31 of12 { width:8.33333333%; }
+.\32 of12 { width:16.66666666%; }
+.\33 of12 { width:25%; }
+.\34 of12 { width:33.33333333%; }
+.\35 of12 { width:41.66666666%; }
+.\36 of12 { width:50%; }
+.\37 of12 { width:58.33333333%; }
+.\38 of12 { width:66.66666666%; }
+.\39 of12 { width:75%; }
+.\31 0of12 { width:83.33333333%; }
+.\31 1of12 { width:91.66666666%; }
+.\31 2of12 { width: 100%; }
+
+@media (min-width: 768px) {
+	.md-1of5 { width: 20% }
+	.md-2of5 { width: 40% }
+	.md-3of5 { width: 60% }
+	.md-4of5 { width: 80% }
+	.md-5of5 { width: 100% }
+	.md-1of12 { width:8.33333333%; }
+	.md-2of12 { width:16.66666666%; }
+	.md-3of12 { width:25; }
+	.md-4of12 { width:33.33333333%; }
+	.md-5of12 { width:41.66666666%; }
+	.md-6of12 { width:50%; }
+	.md-7of12 { width:58.33333333%; }
+	.md-8of12 { width:66.66666666%; }
+	.md-9of12 { width:75; }
+	.md-10of12 { width:83.33333333%; }
+	.md-11of12 { width:91.66666666%; }
+	.md-12of12 { width: 100%; }
+}
+
+@media (min-width: 1200px) {
+	.lg-1of5 { width: 20% }
+	.lg-2of5 { width: 40% }
+	.lg-3of5 { width: 60% }
+	.lg-4of5 { width: 80% }
+	.lg-5of5 { width: 100% }
+	.lg-1of5 	{ width:20%; }
+	.lg-1of12 { width:8.33333333%; }
+	.lg-2of12 { width:16.66666666%; }
+	.lg-3of12 { width:25%; }
+	.lg-4of12 { width:33.33333333%; }
+	.lg-5of12 { width:41.66666666%; }
+	.lg-6of12 { width:50%; }
+	.lg-7of12 { width:58.33333333%; }
+	.lg-8of12 { width:66.66666666%; }
+	.lg-9of12 { width:75; }
+	.lg-10of12 { width:83.33333333%; }
+	.lg-11of12 { width:91.66666666%; }
+	.lg-12of12 { width: 100%; }
+}

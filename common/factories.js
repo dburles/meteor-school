@@ -3,7 +3,7 @@ Factory.define('user', Meteor.users, {
   services: {
     twitter: {
       screenName: function() { return Fake.user().name.toLowerCase(); }
-      // profile_image_url
+      // profile_image_url: function() { return 'http://placepu.gs/250/250'; }
     }
   }
 });

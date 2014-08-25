@@ -2,7 +2,7 @@ Events = new Meteor.Collection('events');
 
 Meteor.methods({
   createEvent: function(date) {
-    Events.insert({ date: moment(date).toDate() });
+    Events.insert({ date: moment(new Date(date)).toDate() });
   }
 });
 

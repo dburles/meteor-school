@@ -52,7 +52,7 @@ Template.schedule.events({
     event.preventDefault();
 
     var date = template.$('[name=date]').val();
-    if (! moment(date).isValid())
+    if (! moment(new Date(date)).isValid())
       return showError("Invalid date: " + date);
 
     Meteor.call('createEvent', date, function(error) {

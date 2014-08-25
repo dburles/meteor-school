@@ -21,7 +21,7 @@ ul.grid { padding-left: 0; }
 	flex-wrap: wrap;
 	margin-left: -15px;
 }
-.grid -item {
+.grid-item {
 	/* Fallbacks */
 	letter-spacing: normal;
 	vertical-align: top;

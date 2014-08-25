@@ -142,19 +142,23 @@
   {{#if users.count}}
     {{#each users}}
       <div class="grid-item 3of12">
-        {{#if avatar}}
-          <img src="{{avatar}}" width="100%">
-        {{else}}
-          <i class="fa fa-user"></i>
-        {{/if}}
+        <div>
+          {{#if avatar}}
+            <img src="{{avatar}}" width="100%">
+          {{else}}
+            <i class="fa fa-user"></i>
+          {{/if}}
 
-        <p>{{profile.name}}<br><a href="http://twitter.com/{{name}}" target="_blank">@{{name}}</a></p>
+          <p>{{profile.name}}<br><a href="http://twitter.com/{{name}}" target="_blank">@{{name}}</a></p>
+        </div>
       </div>
     {{/each}}
   {{else}}
     {{#if ready}}
       <div class="grid-item 3of12">
-        <p>No users</p>
+        <div>
+          <p>No users</p>
+        </div>
       </div>
     {{/if}}
   {{/if}}

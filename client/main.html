@@ -135,7 +135,7 @@
 <template name="usersList">
   {{#if users.count}}
     {{#each users}}
-      <div class="col-sm-3">
+      <div class="col-sm-2">
         {{#if avatar}}
           <img src="{{avatar}}" width="100%">
         {{else}}
@@ -146,7 +146,7 @@
       </div>
     {{/each}}
   {{else}}
-    <div class="col-sm-3">
+    <div class="col-sm-2">
       <p>No users</p>
     </div>
   {{/if}}

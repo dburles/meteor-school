@@ -32,7 +32,7 @@ Template.event.helpers({
 
 Template.usersList.helpers({
   ready: function() {
-    return subs.events.ready();
+    return subs.users.ready();
   }
 });
 

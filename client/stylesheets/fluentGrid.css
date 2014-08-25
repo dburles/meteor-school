@@ -20,16 +20,16 @@ ul.grid { padding-left: 0; }
 	display: flex;
 	flex-wrap: wrap;
 	margin-left: -15px;
-	&-item {
-		/* Fallbacks */
-		letter-spacing: normal;
-		vertical-align: top;
-		display: inline-block;
-		/* Modern Browsers */
-		display: flex;
-		padding-left: 15px;
-		padding-bottom: 15px;
-	}
+}
+.grid -item {
+	/* Fallbacks */
+	letter-spacing: normal;
+	vertical-align: top;
+	display: inline-block;
+	/* Modern Browsers */
+	display: flex;
+	padding-left: 15px;
+	padding-bottom: 15px;
 }
 
 /* Size Class's */

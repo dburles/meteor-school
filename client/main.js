@@ -38,11 +38,13 @@ Template.usersList.helpers({
 
 Template.event.events({
   'click [data-yes]': function() {
-    Events.update(this._id, { $addToSet: { userIds: Meteor.userId() }});
+    var event = this.event;
+    Events.update(event._id, { $addToSet: { userIds: Meteor.userId() }});
     showAlert("You're attending!");
   },
   'click [data-no]': function() {
-    Events.update(this._id, { $pull: { userIds: Meteor.userId() }});
+    var event = this.event;
+    Events.update(event._id, { $pull: { userIds: Meteor.userId() }});
     showAlert("You're not attending");
   }
 });

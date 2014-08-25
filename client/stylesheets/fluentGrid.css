@@ -1,10 +1,9 @@
-$font-family: "Droid Sans", "Helvetica Neue", Helvetica, Arial, sans-serif!default;
-$grid-margin: 15px!default;
+
 
 /* This resets the font back to your body font family.
-	 Set your content font stack here: */
+Set your content font stack here: */
 html, button, input, select, textarea, .grid-item {
-	font-family: $font-family
+	font-family: "Droid Sans", "Helvetica Neue", Helvetica, Arial, sans-serif!default;
 }
 
 /* Optional depending on reset used. */
@@ -20,7 +19,7 @@ ul.grid { padding-left: 0; }
 	list-style-type: none;
 	display: flex;
 	flex-wrap: wrap;
-	margin-left: -$grid-margin;
+	margin-left: -15px;
 	&-item {
 		/* Fallbacks */
 		letter-spacing: normal;
@@ -28,8 +27,8 @@ ul.grid { padding-left: 0; }
 		display: inline-block;
 		/* Modern Browsers */
 		display: flex;
-		padding-left: $grid-margin;
-		padding-bottom: $grid-margin;
+		padding-left: 15px;
+		padding-bottom: 15px;
 	}
 }
 

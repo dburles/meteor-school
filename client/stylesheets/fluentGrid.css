@@ -1,96 +1,67 @@
-
-
 /* This resets the font back to your body font family.
-Set your content font stack here: */
-html, button, input, select, textarea, .grid-item {
-	font-family: "Droid Sans", "Helvetica Neue", Helvetica, Arial, sans-serif!default;
-}
+	 Set your content font stack here: */
+html, button, input, select, textarea, .row-item, .grid-item { font-family: "Droid Sans", "Helvetica Neue", Helvetica, Arial, sans-serif; }
 
 /* Optional depending on reset used. */
-* { box-sizing: border-box; }
-ul.grid { padding-left: 0; }
+* { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
 
 /* The Grid */
-.grid {
-	/* Fallbacks */
-	font-family: FreeSans, Arimo, "Droid Sans", Helvetica, Arial, sans-serif;
-	letter-spacing: -.31em;
-	/* Modern Browsers */
-	list-style-type: none;
-	display: flex;
-	flex-wrap: wrap;
-	margin-left: -15px;
-}
-.grid-item {
-	/* Fallbacks */
-	letter-spacing: normal;
-	vertical-align: top;
-	display: inline-block;
-	/* Modern Browsers */
-	display: flex;
-	padding-left: 15px;
-	padding-bottom: 15px;
-	/* testing dave let me know if anything insane happens. */
-	flex-direction: column;
-}
+.grid { /* Fallbacks */ font-family: FreeSans, Arimo, "Droid Sans", Helvetica, Arial, sans-serif; letter-spacing: -.31em; /* Modern Browsers */ display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-flex-wrap: wrap; -ms-flex-wrap: wrap; flex-wrap: wrap; /*flew-flow: row wrap;*/ list-style-type: none; margin-left: -1.6%; /* Optional depending on reset used. */ padding-left: 0; /* Modifiers */ /* Children */ }
+.grid.ltr { /* left to right alignment of child layouts */ -webkit-box-pack: start; -webkit-justify-content: flex-start; -ms-flex-pack: start; justify-content: flex-start; }
+.grid.rtl { /* Right to left alignment of child layouts */ -webkit-box-pack: end; -webkit-justify-content: flex-end; -ms-flex-pack: end; justify-content: flex-end; }
+.grid-item { /* Fallbacks */ letter-spacing: normal; vertical-align: top; display: inline-block; /* Modern Browsers */ margin-left: 1.6%; margin-bottom: 1.6%; }
+.grid-item.end { /* Useful as an end to a row, as it will grow to fill up the remaining area of the row. */ -webkit-box-flex: 1; -webkit-flex-grow: 1; -ms-flex-positive: 1; flex-grow: 1; width: auto; }
+.grid-item.autoFillWidth { /* automatic width to fill up the row the element is placed on */ -webkit-box-flex: 1; -webkit-flex: 1; -ms-flex: 1; flex: 1; }
 
+.\31 of12 { width: 6.73333%; }
+.\32 of12 { width: 15.06667%; }
+.\33 of12 { width: 23.4%; }
+.\34 of12 { width: 31.73333%; }
+.\35 of12 { width: 40.06667%; }
+.\36 of12 { width: 48.4%; }
+.\37 of12 { width: 56.73333%; }
+.\38 of12 { width: 65.06667%; }
+.\39 of12 { width: 73.4%; }
+.\31 0of12 { width: 81.73333%; }
+.\31 1of12 { width: 90.06667%; }
+.\31 2of12 { width: 98.4%; }
 
-/* Size Class's */
-.\31 of5 { width: 20% }
-.\32 of5 { width: 40% }
-.\33 of5 { width: 60% }
-.\34 of5 { width: 80% }
-.\35 of5 { width: 100% }
-.\31 of12 { width:8.33333333%; }
-.\32 of12 { width:16.66666666%; }
-.\33 of12 { width:25%; }
-.\34 of12 { width:33.33333333%; }
-.\35 of12 { width:41.66666666%; }
-.\36 of12 { width:50%; }
-.\37 of12 { width:58.33333333%; }
-.\38 of12 { width:66.66666666%; }
-.\39 of12 { width:75%; }
-.\31 0of12 { width:83.33333333%; }
-.\31 1of12 { width:91.66666666%; }
-.\31 2of12 { width: 100%; }
-
-@media (min-width: 768px) {
-	.md-1of5 { width: 20% }
-	.md-2of5 { width: 40% }
-	.md-3of5 { width: 60% }
-	.md-4of5 { width: 80% }
-	.md-5of5 { width: 100% }
-	.md-1of12 { width:8.33333333%; }
-	.md-2of12 { width:16.66666666%; }
-	.md-3of12 { width:25%; }
-	.md-4of12 { width:33.33333333%; }
-	.md-5of12 { width:41.66666666%; }
-	.md-6of12 { width:50%; }
-	.md-7of12 { width:58.33333333%; }
-	.md-8of12 { width:66.66666666%; }
-	.md-9of12 { width:75%; }
-	.md-10of12 { width:83.33333333%; }
-	.md-11of12 { width:91.66666666%; }
-	.md-12of12 { width: 100%; }
+@media screen and (min-width: 568px) { .sm-\31 of12 { width: 6.73333%; }
+  .sm-\32 of12 { width: 15.06667%; }
+  .sm-\33 of12 { width: 23.4%; }
+  .sm-\34 of12 { width: 31.73333%; }
+  .sm-\35 of12 { width: 40.06667%; }
+  .sm-\36 of12 { width: 48.4%; }
+  .sm-\37 of12 { width: 56.73333%; }
+  .sm-\38 of12 { width: 65.06667%; }
+  .sm-\39 of12 { width: 73.4%; }
+  .sm-\31 0of12 { width: 81.73333%; }
+  .sm-\31 1of12 { width: 90.06667%; }
+  .sm-\31 2of12 { width: 98.4%; } 
+	.grid-item.sm-autoFillWidth { /* automatic width to fill up the row the element is placed on */ -webkit-box-flex: 1; -webkit-flex: 1; -ms-flex: 1; flex: 1; width: auto; }
 }
+@media screen and (min-width: 768px) { .md-\31 of12 { width: 6.73333%; }
+  .md-\32 of12 { width: 15.06667%; }
+  .md-\33 of12 { width: 23.4%; }
+  .md-\34 of12 { width: 31.73333%; }
+  .md-\35 of12 { width: 40.06667%; }
+  .md-\36 of12 { width: 48.4%; }
+  .md-\37 of12 { width: 56.73333%; }
+  .md-\38 of12 { width: 65.06667%; }
+  .md-\39 of12 { width: 73.4%; }
+  .md-\31 0of12 { width: 81.73333%; }
+  .md-\31 1of12 { width: 90.06667%; }
+  .md-\31 2of12 { width: 98.4%; } }
 
-@media (min-width: 1200px) {
-	.lg-1of5 { width: 20% }
-	.lg-2of5 { width: 40% }
-	.lg-3of5 { width: 60% }
-	.lg-4of5 { width: 80% }
-	.lg-5of5 { width: 100% }
-	.lg-1of5 	{ width:20%; }
-	.lg-1of12 { width:8.33333333%; }
-	.lg-2of12 { width:16.66666666%; }
-	.lg-3of12 { width:25%; }
-	.lg-4of12 { width:33.33333333%; }
-	.lg-5of12 { width:41.66666666%; }
-	.lg-6of12 { width:50%; }
-	.lg-7of12 { width:58.33333333%; }
-	.lg-8of12 { width:66.66666666%; }
-	.lg-9of12 { width:75; }
-	.lg-10of12 { width:83.33333333%; }
-	.lg-11of12 { width:91.66666666%; }
-	.lg-12of12 { width: 100%; }
-}
+@media screen and (min-width: 1024px) { .lg-\31 of12 { width: 6.73333%; }
+  .lg-\32 of12 { width: 15.06667%; }
+  .lg-\33 of12 { width: 23.4%; }
+  .lg-\34 of12 { width: 31.73333%; }
+  .lg-\35 of12 { width: 40.06667%; }
+  .lg-\36 of12 { width: 48.4%; }
+  .lg-\37 of12 { width: 56.73333%; }
+  .lg-\38 of12 { width: 65.06667%; }
+  .lg-\39 of12 { width: 73.4%; }
+  .lg-\31 0of12 { width: 81.73333%; }
+  .lg-\31 1of12 { width: 90.06667%; }
+  .lg-\31 2of12 { width: 98.4%; } }

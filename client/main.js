@@ -15,7 +15,7 @@ Template.main.helpers({
   }
 });
 
-UI.body.events({
+Template.body.events({
   'click [data-sign-in]': function() {
     Meteor.loginWithTwitter();
   },

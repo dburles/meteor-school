@@ -1,4 +1,4 @@
-Events = new Meteor.Collection('events');
+Events = new Mongo.Collection('events');
 
 Meteor.methods({
   createEvent: function(date) {

@@ -70,37 +70,33 @@
   <!-- grid -->
   <div class="grid">
     <!-- Column -->
-    <div class="grid-item 12of12 sm-autoFillWidth">
-      <div class="page-header">
-        {{#if event}}
-          {{#with event}}
-            <h1>
-              Next <small>{{formattedDate}}</small>
-            </h1>
-          {{/with}}
+    <div class="grid-item 12of12 sm-autoFillWidth / page-header">
+      {{#if event}}
+        {{#with event}}
+          <h1>
+            Next <small>{{formattedDate}}</small>
+          </h1>
+        {{/with}}
+      {{else}}
+        {{#if ready}}
+          <h1>No event scheduled</h1>
+          <small>There's currently no event scheduled</small>
         {{else}}
-          {{#if ready}}
-            <h1>No event scheduled</h1>
-            <small>There's currently no event scheduled</small>
-          {{else}}
-            <h1>Loading...</h1>
-          {{/if}}
+          <h1>Loading...</h1>
         {{/if}}
-      </div>
+      {{/if}}
     </div>
     <!-- Column -->
-    <div class="grid-item 12of12 sm-autoFillWidth">
-      <div class="page-header">
-        <h1 class="text-right">
-        {{#if currentUser}}
-          <small>Your RSVP</small>
-          <button data-yes class="btn btn-success">Yes</button>
-          <button data-no class="btn btn-danger">No</button>
-        {{else}}
-          <small>Sign in to RSVP</small>
-        {{/if}}
-        </h1>
-      </div>
+    <div class="grid-item 12of12 sm-autoFillWidth / page-header">
+      <h1 class="text-right">
+      {{#if currentUser}}
+        <small>Your RSVP</small>
+        <button data-yes class="btn btn-success">Yes</button>
+        <button data-no class="btn btn-danger">No</button>
+      {{else}}
+        <small>Sign in to RSVP</small>
+      {{/if}}
+      </h1>
     </div>
   </div>
 
